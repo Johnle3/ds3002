@@ -1,13 +1,12 @@
 import nltk 
 import discord
-#This helps understand english punctuation...like the period in Mr. Jones is different the J.R.R. Tolkien
 nltk.download('punkt')
 
 from nltk import word_tokenize,sent_tokenize
-# Read moreon stemming here --> https://towardsdatascience.com/stemming-lemmatization-what-ba782b7c0bd8
+
 from nltk.stem.lancaster import LancasterStemmer
 stemmer = LancasterStemmer()
-
+#read more on the steamer https://towardsdatascience.com/stemming-lemmatization-what-ba782b7c0bd8
 import numpy as np 
 import tflearn
 import tensorflow as tf
@@ -102,6 +101,7 @@ def bag_of_words(s, words):
     return np.array(bag)
 
 
+'''
 def chat():
     print("Start talking with the bot! (type quit to stop)")
     while True:
@@ -122,8 +122,7 @@ def chat():
         else:
             print("I didnt get that. Can you explain or try again.")
 
-import discord
-
+'''
 class MyClient(discord.Client):
     async def on_ready(self):
         print('Logged in as')
@@ -153,5 +152,7 @@ class MyClient(discord.Client):
                await message.channel.send("I didnt get that. Can you explain or try again.".format(message))
 
 client = MyClient()
-client.run('YOU TOKEN')
+client.run('ODk4MjIwNTcxNDg4MzA1MjAy.YWhDGA.IrWOW-jri-Ox2imZ7XHG573hOb8')
+#ODk4MjIwNTcxNDg4MzA1MjAy.YWhDGA.IrWOW-jri-Ox2imZ7XHG573hOb8
+
 #chat()
